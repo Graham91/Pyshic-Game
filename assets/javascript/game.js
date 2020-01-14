@@ -1,7 +1,10 @@
    
+    
+    function computerGuess(alfabet){
     var alfabet = ["c","d","b", "a", "e","f","g","h","i","j","k","l","m","n","o","p","r","s","t","u","v","w","x","y","z"]; 
     computerChoice = alfabet[Math.floor(Math.random() * alfabet.length)];
-   console.log(computerChoice) 
+   console.log("correct answer: " + computerChoice); }
+   computerGuess();
    var totalLetter = 0;
    var winCount = 0;
    var lossCount = 0;
@@ -23,14 +26,20 @@
 
 }
    if (totalLetter === 9){
-   console.log("you lose")
+   if (humanChoice === computerChoice){
+
+   }
+ else {
+     console.log("youloose");
    lossCount++;
    document.getElementById("losses").innerHTML ="Losses: " + lossCount;
    document.getElementById("previousGuess").innerHTML ="Your Guesses so far:";
    humanChoiceArray = [];
    totalLetter = 0;
    document.getElementById("guessleft").innerHTML ="Guesses Left: " + 9;
+   computerGuess();
    }
+}
    if (humanChoice === computerChoice){
    console.log("you win")
 
@@ -41,5 +50,6 @@
    humanChoiceArray = [];
    totalLetter = 0;
    document.getElementById("guessleft").innerHTML ="Guesses Left: " + 9;
+   computerGuess();
 }
    }
